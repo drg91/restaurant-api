@@ -1,0 +1,112 @@
+positions: instr line
+events: cpu(ms)
+
+ob=
+fl=(1) /usr/local/go/src/runtime/sys_darwin.go
+fn=(1) runtime.kevent
+0x1042faf5f 458 50
+
+ob=
+fl=(2) /usr/local/go/src/runtime/duff_arm64.s
+fn=(2) runtime.duffcopy
++90345 258 20
+
+ob=
+fl=(3) /usr/local/go/src/math/sin.go
+fn=(3) math.sin
++43444 208 10
+
+ob=
+fl=(4) /usr/local/go/src/runtime/netpoll_kqueue.go
+fn=(4) runtime.netpoll
+-278705 141 0
+cfl=(1)
+cfn=(1)
+calls=0 -133789 458
+* * 50
+
+ob=
+fl=(5) /usr/local/go/src/runtime/proc.go
+fn=(5) runtime.findRunnable
++45224 2978 0
+cfl=(4)
+cfn=(4)
+calls=0 * 141
+* * 40
++1496 3191 0
+cfl=(4)
+cfn=(4)
+calls=0 -45224 141
+* * 10
+
+ob=
+fl=(5)
+fn=(6) runtime.schedule
++5244 3582 0
+cfl=(5)
+cfn=(5)
+calls=0 -1496 2978
+* * 40
+cfl=(5)
+cfn=(5)
+calls=0 * 3191
+* * 10
+
+ob=
+fl=(5)
+fn=(7) runtime.park_m
++1380 3745 0
+cfl=(5)
+cfn=(6)
+calls=0 * 3582
+* * 50
+
+ob=
+fl=(6) /usr/local/go/src/runtime/asm_arm64.s
+fn=(8) runtime.mcall
++170376 192 0
+cfl=(5)
+cfn=(7)
+calls=0 * 3745
+* * 50
+
+ob=
+fl=(7) /Users/dgarbiglia/Documents/challenge/restaurant-api/handler/local_handler.go
+fn=(9) restaurant-api/handler.(*LocalHandler).HandleRequest.func1
++2131788 64 0
+cfl=(2)
+cfn=(2)
+calls=0 +11541 258
+* * 20
++60 65 0
+cfl=(7)
+cfn=(10) restaurant-api/handler.(*LocalHandler).isInRange
+calls=0 +60 95
+* * 10
+
+ob=
+fl=(7)
+fn=(10)
+* 95 0
+cfl=(7)
+cfn=(11) restaurant-api/handler.distanceHaversine
+calls=0 +872 142
+* * 10
+
+ob=
+fl=(3)
+fn=(12) math.Sin
++872 189 0
+cfl=(3)
+cfn=(3)
+calls=0 -2076863 208
+* * 10
+
+ob=
+fl=(7)
+fn=(11)
+* 142 0
+cfl=(3)
+cfn=(12)
+calls=0 * 189
+* * 10
